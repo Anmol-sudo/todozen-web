@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
+import { PushNotificationManager } from '@/components/push-notification-manager';
 
 export const metadata: Metadata = {
   title: 'TodoZen',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
+        <PushNotificationManager />
         {children}
         <Toaster />
       </body>

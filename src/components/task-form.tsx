@@ -70,6 +70,14 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
     }
     
     onAddTask({ description: values.description, dueDate: combinedDueDate, dueTime: values.dueTime ?? null });
+    
+    // Show a notification
+    if ('Notification' in window && Notification.permission === 'granted') {
+      new Notification('Task Added!', {
+        body: values.description,
+      });
+    }
+    
     form.reset();
   }
 
@@ -169,7 +177,7 @@ export function TaskForm({ onAddTask }: TaskFormProps) {
           name="description"
           render={() => (
             <FormItem>
-              <FormMessage className="hidden sm:block"/>
+              <FormMessage className="hidden sm:block" />
             </FormItem>
           )}
         />

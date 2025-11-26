@@ -1,4 +1,4 @@
-import { ListTodo } from 'lucide-react';
+import { ListTodo, Bell } from 'lucide-react';
 
 export function AppHeader() {
   return (
@@ -10,6 +10,9 @@ export function AppHeader() {
             TodoZen
           </h1>
         </div>
+        <button className="p-2 rounded-full hover:bg-gray-200">
+          <Bell className="size-6 text-gray-500" />
+        </button>
       </div>
     </header>
   );
